@@ -89,3 +89,53 @@ Defined legal classification and benefits for gig workers.
 - Existing approaches lack adaptability to complex real-world conditions  
 
 These insights guide the design of a more reliable and robust system for income protection.
+
+
+## Limitations of Existing Solutions
+
+Despite the progress in parametric insurance and gig worker protection systems, several critical limitations remain:
+
+### 1. Basis Risk (Inaccurate Payouts)
+Most parametric systems rely on predefined thresholds (e.g., rainfall levels). However, these triggers do not always reflect the actual income loss experienced by workers, leading to either over-compensation or no compensation.
+
+---
+
+### 2. Single Data Dependency
+Existing systems often depend on a single data source such as weather. Real-world disruptions are multi-dimensional, and relying on one signal reduces accuracy and reliability.
+
+---
+
+### 3. Lack of Hyperlocal Context
+Most solutions operate at a city or regional level. However, disruptions are often highly localized, and such coarse-grained data fails to capture the actual conditions faced by individual workers.
+
+---
+
+### 4. Absence of Income Personalization
+Payouts are usually fixed or generalized, without considering the worker’s actual earnings. This leads to unfair compensation that does not match real income loss.
+
+---
+
+### 5. Weak Fraud Detection Mechanisms
+Existing systems assume that input data is trustworthy. They lack robust mechanisms to detect:
+- GPS spoofing  
+- Fake claims  
+- Coordinated fraud attacks  
+
+---
+
+### 6. Vulnerability to Adversarial Attacks
+Systems are not designed to handle large-scale coordinated attacks, where multiple users exploit the system simultaneously, potentially draining the payout pool.
+
+---
+
+### 7. Lack of Real-Time Adaptability
+Many systems use static rules and thresholds, making them unable to adapt dynamically to changing real-world conditions.
+
+---
+
+### 8. Trust and Adoption Challenges
+Inconsistent or inaccurate payouts reduce user trust, which directly impacts adoption among gig workers.
+
+---
+
+These limitations highlight the need for a more adaptive, multi-signal, and fraud-resistant system that can accurately reflect real-world disruptions and ensure fair payouts.
