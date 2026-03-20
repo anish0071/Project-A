@@ -149,19 +149,24 @@ The system shifts from traditional single-trigger insurance models to a **confid
 
 ---
 
-### Core Approach
+## Core Idea
 
-Instead of relying on a single condition (e.g., rainfall threshold), the system aggregates multiple signals to determine whether a worker is genuinely impacted by a disruption.
+Project A introduces a **multi-signal, AI-driven parametric insurance system** that replaces static triggers with a **confidence-based decision framework**.
 
-These signals include:
+---
 
-- Weather conditions (rainfall, heat)
-- Extreme air quality levels (only in severe cases)
-- Traffic congestion (as a supporting indicator)
-- Time-based context (peak working hours)
-- User activity and movement patterns
+## System Workflow
 
-Each signal contributes to a **confidence score**, representing the likelihood of a real disruption affecting the worker’s ability to earn.
+1. User initiates claim via mobile app  
+2. System collects real-time environmental + behavioral data  
+3. AI models compute:
+   - Confidence Score (disruption likelihood)
+   - Fraud Risk Score  
+4. Decision engine evaluates claim  
+5. Outcome:
+   - Instant payout  
+   - Delayed verification  
+   - Fraud flag  
 
 ---
 
@@ -207,3 +212,167 @@ This approach ensures both **user control and system reliability**.
 ---
 
 This solution addresses the key limitations of existing systems by introducing adaptability, personalization, and resilience into parametric insurance design.
+
+## Weekly Premium Model
+
+### Design Philosophy:
+- Affordable micro-subscription  
+- Predictable risk  
+- Financial sustainability  
+
+---
+
+### Model Structure:
+
+- Fixed weekly premium (low-cost)  
+- Pre-defined weekly payout cap (₹400–₹500)  
+- Coverage limited to initial disruption window (2–3 days)  
+
+---
+
+### Financial Control Mechanisms:
+
+- Per-user payout cap  
+- Event-level budget pool  
+- Dynamic payout scaling (based on claim volume)  
+- Duration-based payout reduction  
+
+---
+
+### Key Principle:
+
+> The system provides **short-term income protection**, not full income replacement.
+
+---
+
+## Parametric Trigger Design
+
+Unlike traditional models, triggers are not binary.
+
+### Multi-Signal Inputs:
+- Weather severity  
+- Traffic disruption  
+- Environmental conditions  
+- Time context  
+- User activity patterns  
+
+---
+
+### Trigger Logic:
+
+A disruption is validated only when:
+
+> Combined signals → Confidence Score exceeds threshold
+
+---
+
+## AI/ML Integration
+
+### 1. Confidence Scoring
+- Multi-signal classification model  
+- Outputs probability of real disruption  
+
+---
+
+### 2. Fraud Detection
+
+Multi-layer system:
+
+- Rule-based detection (GPS anomalies)  
+- Anomaly detection models (Isolation Forest)  
+- Clustering models (DBSCAN) for crowd attacks  
+
+---
+
+### 3. Decision Intelligence
+
+- Combines confidence + fraud scores  
+- Enables adaptive decision-making  
+
+---
+
+### 4. Premium Optimization (Future Scope)
+
+- Risk-based pricing  
+- Usage-based adjustments  
+
+---
+
+## Adversarial Defense & Anti-Spoofing Strategy
+
+The system is designed to operate in adversarial environments.
+
+### Detection Mechanisms:
+
+- Pre-event activity validation  
+- Movement consistency checks  
+- Hyperlocal signal matching  
+- Behavioral diversity analysis  
+
+---
+
+### Crowd Attack Prevention:
+
+- Claim spike detection  
+- Pattern similarity analysis  
+- Coordinated behavior detection  
+
+---
+
+### Fairness Model:
+
+- No hard rejection in uncertain cases  
+- Progressive decision system ensures fairness  
+
+---
+
+## Platform Choice: Mobile-First
+
+### Why Mobile:
+
+- Direct integration with gig worker workflow  
+- Real-time interaction  
+- Access to device-level signals  
+- Enables continuous monitoring  
+
+---
+
+## Tech Stack
+
+Frontend: React Native / Flutter  
+Backend: Node.js / FastAPI  
+AI/ML: Python (XGBoost, Scikit-learn)  
+Streaming: Kafka / PubSub  
+Database: PostgreSQL / NoSQL  
+Cloud: AWS / Azure  
+
+---
+
+## System Architecture
+
+*(Insert architecture diagram here)*
+
+---
+
+## Development Plan
+
+Phase 1: System design + logic  
+Phase 2: Backend + APIs  
+Phase 3: AI models + fraud detection  
+Phase 4: Scaling + optimization  
+
+---
+
+## Impact
+
+- Accurate disruption detection  
+- Reduced fraud and false payouts  
+- Financially sustainable model  
+- Real-world scalability  
+- High trust and adoption potential  
+
+---
+
+## Vision
+
+To build a real-time financial safety layer for gig workers — ensuring that temporary disruptions never translate into permanent financial instability.
