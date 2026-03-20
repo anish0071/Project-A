@@ -305,7 +305,7 @@ https://www.bcg.com/publications/2022/future-of-embedded-insurance
 
 ## System Architecture
 
-*(Insert architecture diagram here)*
+![Diagram](<mermaid-diagram (3).png>)
 
 ---
 
