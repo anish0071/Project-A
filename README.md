@@ -11,7 +11,7 @@ Events like heavy rainfall, extreme heat, poor air quality, or road blockages ca
 
 Traditional insurance systems are not designed for such real-time, short-duration disruptions due to slow claim processing and reliance on manual verification. While parametric insurance enables faster payouts, existing systems often rely on static triggers that fail to capture real-world complexity, leading to inaccurate outcomes.
 
-Additionally, these systems are increasingly exposed to misuse through location spoofing and coordinated claims, highlighting the need for more intelligent and resilient designs.
+Additionally, these systems are increasingly exposed to misuse through location spoofing and coordinated claims.
 
 **There is a need for a real-time, adaptive, and reliable system that can accurately detect genuine disruptions and provide fair compensation to gig workers.**
 
@@ -23,7 +23,7 @@ Quick-commerce and last-mile delivery partners.
 
 - Depend on daily earnings  
 - Operate in time-sensitive environments  
-- Work in dynamic, real-world conditions  
+- Work in dynamic real-world conditions  
 - Experience immediate income loss during disruptions  
 
 > “No delivery = no income”
@@ -34,8 +34,6 @@ Quick-commerce and last-mile delivery partners.
 
 Project A introduces a **multi-signal, AI-driven parametric insurance system** that replaces static triggers with a **confidence-based decision framework**.
 
-Instead of relying on a single condition, the system evaluates multiple real-world signals and behavioral patterns to determine whether a worker is genuinely impacted.
-
 ---
 
 ## System Workflow
@@ -43,13 +41,108 @@ Instead of relying on a single condition, the system evaluates multiple real-wor
 1. User initiates claim via mobile app  
 2. System collects real-time environmental and behavioral signals  
 3. AI models compute:
-   - Confidence Score (likelihood of disruption)  
+   - Confidence Score  
    - Fraud Risk Score  
-4. Decision engine evaluates the claim  
+4. Decision engine evaluates  
 5. Outcome:
    - Instant payout  
    - Delayed verification  
-   - Flag for further analysis  
+   - Flagged  
+
+---
+
+## Existing & Prior Work in Gig Worker & Parametric Insurance (2020–2026)
+
+### 2020 – Gig Worker Policy & Protection (California Proposition 22)
+
+- Introduced minimum earnings guarantees and limited insurance benefits  
+
+**Reference:**  
+https://en.wikipedia.org/wiki/2020_California_Proposition_22  
+
+---
+
+### 2021 – Informal Worker Protection Studies (ILO)
+
+- Highlighted lack of financial resilience in gig economy  
+
+**Reference:**  
+https://www.ilo.org/global/topics/non-standard-employment/lang--en/index.htm  
+
+---
+
+### 2022 – Gig Worker Insurance Frameworks (ORF)
+
+- Explored scalable insurance systems  
+
+**Reference:**  
+https://www.orfonline.org/research/platform-workers-and-the-social-security-code/  
+
+---
+
+### 2023 – Parametric Insurance Expansion (Swiss Re)
+
+- Trigger-based insurance for climate risks  
+
+**Reference:**  
+https://www.swissre.com/risk-knowledge/parametric-insurance.html  
+
+---
+
+### 2024 – Financial Resilience Research (ADB)
+
+- Studied income instability  
+
+**Reference:**  
+https://www.adb.org/publications/gig-economy-financial-resilience  
+
+---
+
+### 2025 – Parametric Insurance Pilots (Munich Re)
+
+- Weather-triggered gig worker protection  
+
+**Reference:**  
+https://www.munichre.com/en/solutions/for-industry-clients/parametric-insurance.html  
+
+---
+
+### 2026 – Embedded Insurance Trend (BCG)
+
+- Platform-integrated insurance systems  
+
+**Reference:**  
+https://www.bcg.com/publications/2022/future-of-embedded-insurance  
+
+---
+
+## Learnings from Prior Work
+
+### What Worked
+
+- Instant payouts via parametric models  
+- Low-cost accessibility  
+- High relevance to gig workers  
+
+---
+
+### Key Gaps Identified
+
+- Poor alignment with actual income loss  
+- Single-signal dependency  
+- Lack of personalization  
+- Weak fraud detection  
+
+---
+
+## How Project A Builds on Prior Work
+
+- Multi-signal validation  
+- Real-time decision-making  
+- Behavioral intelligence integration  
+- Confidence-based evaluation  
+- Fraud-resistant architecture  
+- Earnings-aligned payouts  
 
 ---
 
@@ -57,68 +150,48 @@ Instead of relying on a single condition, the system evaluates multiple real-wor
 
 ### Design Philosophy
 
-- Affordable and accessible  
-- Predictable and transparent  
-- Built for long-term sustainability  
+- Affordable  
+- Predictable  
+- Sustainable  
 
 ---
 
 ### Model Structure
 
-- Fixed weekly micro-premium  
-- Pre-defined weekly payout cap  
-- Coverage focused on short-term disruption windows  
+- Fixed weekly premium  
+- Weekly payout cap  
+- Short-term coverage  
 
 ---
 
 ### Financial Design
 
-- Shared risk pool across users  
-- Controlled payout exposure  
-- Dynamic payout scaling based on claim volume  
-
----
-
-### Key Principle
-
-> The system is designed as a **short-term income protection layer**, ensuring immediate financial support during disruption periods.
+- Shared risk pool  
+- Controlled exposure  
+- Dynamic scaling  
 
 ---
 
 ## Unit Economics & Sustainability
 
-### Example Scenario (1000 Users)
+### Example (1000 Users)
 
 - Weekly premium: ₹50  
-- Total pool: ₹50,000  
+- Pool: ₹50,000  
 
 ---
 
-### Typical Claim Pattern
+### Claims
 
-- 10–20% users affected during disruptions  
-- Average payout per user: ₹200  
+- 10–20% users  
+- Avg payout: ₹200  
 
 ---
 
 ### Outcome
 
-- 200 users claim → ₹40,000 payout  
-- Remaining pool maintains system balance  
-
----
-
-### Sustainability Strategy
-
-- Pool-based risk sharing  
-- Adaptive payout scaling  
-- Controlled exposure per event  
-
----
-
-### Key Insight
-
-> The system maintains stability while ensuring consistent support across varying disruption scenarios.
+- ₹40,000 payout  
+- Pool remains stable  
 
 ---
 
@@ -126,19 +199,17 @@ Instead of relying on a single condition, the system evaluates multiple real-wor
 
 ### Multi-Signal Inputs
 
-- Weather severity  
+- Weather  
 - Environmental conditions  
-- Urban disruption indicators  
-- Time-based context  
-- User activity patterns  
+- Urban signals  
+- Time context  
+- User activity  
 
 ---
 
 ### Trigger Logic
 
-A disruption is validated only when:
-
-> Aggregated signals produce a high confidence score
+> Confidence Score > Threshold
 
 ---
 
@@ -146,72 +217,89 @@ A disruption is validated only when:
 
 ### Confidence Scoring
 
-- Multi-signal classification model  
-- Outputs probability of real disruption  
+- Gradient Boosting (XGBoost / LightGBM)  
+- Optional Bayesian models  
 
 ---
 
 ### Fraud Detection
 
 - Rule-based validation  
-- Anomaly detection models  
-- Behavioral clustering for coordinated activity detection  
+- Isolation Forest  
+- One-Class SVM  
+- Ensemble models  
+
+---
+
+### Behavioral Intelligence
+
+- Movement consistency  
+- Activity validation  
+
+---
+
+### Graph-Based Intelligence
+
+- User graph modeling  
+- Cluster-based fraud detection  
 
 ---
 
 ### Decision Intelligence
 
-- Combines confidence and risk signals  
-- Enables adaptive and context-aware decisions  
+- Combines confidence + fraud score  
 
 ---
 
-### Future Enhancements
+## Advanced AI/ML Architecture
 
-- Dynamic premium optimization  
-- Personalized risk modeling  
+- Multi-model ensemble system  
+- Real-time inference pipeline  
+- Graph-based fraud detection  
+- Crowd attack detection (DBSCAN clustering)  
+
+---
+
+## AI/ML Metrics & Technical Validation
+
+- Precision, Recall, F1-score for fraud detection  
+- ROC-AUC for classification performance  
+- Threshold tuning for decision boundaries  
+- Confidence calibration for reliability  
+- Latency constraints for real-time decisions  
 
 ---
 
 ## Adversarial Defense & Anti-Spoofing Strategy
 
-### Detection Mechanisms
-
-- Pre-event activity validation  
-- Movement consistency analysis  
+- Activity validation  
+- Movement consistency checks  
 - Signal alignment verification  
-- Behavioral diversity assessment  
+- Pattern-based fraud detection  
 
 ---
 
-### Coordinated Attack Detection
+### Crowd Attack Detection
 
 - Claim spike monitoring  
 - Pattern similarity analysis  
-- Group behavior detection  
+- Cluster detection  
 
 ---
 
 ### Decision Strategy
 
-- High confidence → Instant payout  
-- Medium confidence → Verification  
-- Elevated risk → Flagged  
-
----
-
-### Design Principle
-
-> The system ensures fairness through progressive decision-making while maintaining strong resilience against manipulation.
+- High confidence → instant payout  
+- Medium → verification  
+- High risk → flagged  
 
 ---
 
 ## Platform Choice: Mobile-First
 
-- Real-time interaction and responsiveness  
-- Access to device-level signals  
-- Continuous behavioral tracking  
-- Seamless user experience for gig workflows  
+- Real-time interaction  
+- Device-level signals  
+- Continuous monitoring  
 
 ---
 
@@ -232,25 +320,12 @@ Cloud: AWS / Azure
 
 ---
 
-## Development Plan
+## Development Plan (DevTrails Aligned)
 
-Phase 1: System design and architecture  
-Phase 2: Backend services and API integration  
-Phase 3: AI model integration and fraud detection  
-Phase 4: Optimization and scaling  
-
----
-
-## Impact
-
-- Accurate disruption detection  
-- Reliable and fast payouts  
-- Strong fraud resistance  
-- Scalable across regions and platforms  
-- Improved financial stability for gig workers  
+- Phase 1: Research, system design, architecture  
+- Phase 2: Backend + API integration  
+- Phase 3: AI/ML model integration  
+- Phase 4: Fraud detection & adversarial testing  
+- Phase 5: Optimization, scaling, demo readiness  
 
 ---
-
-## Vision
-
-To build a globally scalable, real-time financial protection layer for gig workers — ensuring resilience against unpredictable disruptions while maintaining fairness, speed, and trust.
